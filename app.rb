@@ -5,3 +5,4 @@ require 'sinatra'
 # Dir["/controllers"].each { |f| require f }
 
 require_relative "controllers/index"
+require_relative "models/pizza"
