@@ -27,3 +27,32 @@ post '/pizzas/create' do
   Pizza.create(params["pizza_name"])
   redirect '/'
 end
+
+# show / profile page for each pizza
+# get '/pizzas/cheese'
+get '/pizzas/:pizza_name' do
+  @pizza = Pizza.search(params[:pizza_name])
+
+  if @pizza
+    erb :pizza_info
+  else
+    redirect '/pizzas'
+  end
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

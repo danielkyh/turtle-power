@@ -1,16 +1,14 @@
-
-
 <h3>List of Pizzas</h3>
 <ul>
   <% @pizzas.each do |pizza| %>
-    <li><%= pizza %></li>
+    <li><a href="/pizzas/<%= pizza %>"><%= pizza %></a></li>
   <% end %>
 </ul>
 
 <!-- the above lines generate this -->
-<h3>List of Pizzas</h3>
+<!-- <h3>List of Pizzas</h3>
 <ul>
   <li>cheese</li>
   <li>pepperoni</li>
   <li>supreme</li>
-</ul>
+</ul> -->
