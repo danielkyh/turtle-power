@@ -1,1 +1,6 @@
 <h1>this is the page for <%= @pizza %></h1>
+
+<!-- to delete this pizza -->
+<form method="POST" action="/pizzas/<%= @pizza %>/delete">
+  <input type="submit" value="Eat me!">
+</form>

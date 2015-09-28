@@ -18,4 +18,8 @@ class Pizza
     end
   end
 
+  def self.delete(pizza_name)
+    @@list.delete(pizza_name)
+  end
+
 end

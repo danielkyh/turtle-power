@@ -24,7 +24,7 @@ post '/pizzas/create' do
   p  params
   # {"pizza_name"=>"cheese"}
   # some create pizza codes
-  Pizza.create(params["pizza_name"])
+  Pizza.create(params[:pizza_name])
   redirect '/'
 end
 
@@ -33,6 +33,8 @@ end
 get '/pizzas/:pizza_name' do
   @pizza = Pizza.search(params[:pizza_name])
 
+  # if @pizza exists, go to that page
+  # otherwise, redirect back to the pizza list
   if @pizza
     erb :pizza_info
   else
@@ -40,8 +42,22 @@ get '/pizzas/:pizza_name' do
   end
 end
 
+# post route to delete a specific pizza
+post '/pizzas/:pizza_name/delete' do
+  puts '- ' * 20
+  p params
 
+  Pizza.delete(params[:pizza_name])
+  redirect '/pizzas'
+end
 
+# update
+=begin
+
+update is pretty much the same except we would
+find the same pizza and .update it  
+
+=end
 
 
 
